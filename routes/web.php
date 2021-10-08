@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/articles','App\Http\Controllers\ArticleController@index');
+Route::get('/article','App\Http\Controllers\ArticleController@show');
 
