@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('articles','App\Http\Controllers\Api\ArticleController')->middleware('auth:api');
+
+Route::get('/hello/{name}','App\Http\Controllers\Api\HelloController@getHello');
+Route::post('/hello','App\Http\Controllers\Api\HelloController@postHello');
