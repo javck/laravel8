@@ -18,4 +18,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('tasks','App\Http\Controllers\Api\TaskController@store');
+Route::namespace('App\Http\Controllers\Api')->group(function(){
+    Route::post('tasks','TaskController@store');
+
+    //關聯範例路由
+    Route::get('tasks/showCgy/{id}','TaskController@showCgy');
+    Route::get('cgies/showTasks/{id}','CgyController@showTasks');
+    Route::get('users/showTasks/{id}','UserController@showTasks');
+});
+
+

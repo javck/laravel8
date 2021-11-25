@@ -73,4 +73,11 @@ class TaskController extends Controller
         }
 
     }
+
+    public function showCgy($id)
+    {
+        $task = Task::find($id);
+        $result = null;
+        return $result;
+    }
 }
