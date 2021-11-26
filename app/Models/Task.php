@@ -10,4 +10,8 @@ class Task extends Model
     use HasFactory;
 
     protected $fillable = ['title','pic','salary','desc','enabled'];
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d m:i:s',
+        'updated_at' => 'datetime:Y-m-d m:i:s',
+    ];
 }
