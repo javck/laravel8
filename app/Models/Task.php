@@ -9,5 +9,10 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','salary','desc','enabled'];
+    protected $fillable = ['title','salary','desc','enabled','cgy_id'];
+
+    public function cgy()
+    {
+        return $this->belongsTo(Cgy::class);
+    }
 }

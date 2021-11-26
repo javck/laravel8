@@ -13,7 +13,7 @@ class UserController extends Controller
     public function showTasks($id)
     {
         $user = User::find($id);
-        $result = null;
+        $result = $user->tasks;
 
         return $result;
     }

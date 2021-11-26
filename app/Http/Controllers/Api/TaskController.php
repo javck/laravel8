@@ -74,10 +74,11 @@ class TaskController extends Controller
 
     }
 
+    //顯示關聯的分類資料
     public function showCgy($id)
     {
         $task = Task::find($id);
-        $result = null;
+        $result = $task->cgy;
         return $result;
     }
 }

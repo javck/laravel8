@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Task;
+use App\Models\Cgy;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TaskFactory extends Factory
+class CgyFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Task::class;
+    protected $model = Cgy::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +23,8 @@ class TaskFactory extends Factory
     {
         return [
             'title' => $this->faker->realText(15),
-            'salary' => rand(0,1000000),
-            'desc' => $this->faker->realText,
-            'enabled' => $this->faker->randomElement([true,false]),
-            'cgy_id' => 1
+            'desc' => $this->faker->realText(),
+            'enabled' => 1
         ];
     }
 }

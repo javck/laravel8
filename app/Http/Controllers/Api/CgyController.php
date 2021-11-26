@@ -12,7 +12,7 @@ class CgyController extends Controller
     public function showTasks($id)
     {
         $cgy = Cgy::find($id);
-        $result = null;
+        $result = $cgy->tasks()->orderBy('id','desc')->get();
 
         return $result;
     }
