@@ -46,7 +46,7 @@ class TaskController extends Controller
         $data = $request->only(['title','salary','desc','enabled','pic']);
         $task = Task::create($data);
         if(isset($task)){
-            return $this->makeJson(1,$task);
+            return $this->makeJson(1,['task_id'=>$task->id]);
         }else{
             return $this->makeJson(0,null,'工作新增失敗');
         }
