@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         //順序有講究，請特別注意!!
         //$this->call(CgySeed)
         $this->call(TaskSeeder::class);
+        $this->call(UserSeeder::class);
 
         Schema::enableForeignKeyConstraints(); //重開外鍵偵測
     }
