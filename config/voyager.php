@@ -137,6 +137,11 @@ return [
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
+            'Google搜尋器' => [
+                'route'        => 'https://www.google.com',
+                'icon_class'   => 'voyager-power',
+                'target_blank' => true,
+            ],
             'voyager::generic.logout' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
