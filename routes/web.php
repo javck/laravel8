@@ -35,6 +35,11 @@ Route::get('/cancheck',function(){
     }
 });
 
+Route::get('/sources',function(){
+    $sources = json_decode(setting('constant.sources'),true);
+    return $sources;
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
