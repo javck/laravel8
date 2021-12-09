@@ -16,6 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title',100);
+            $table->bigInteger('cgy_id');
             $table->integer('salary')->default(0);
             $table->text('desc')->nullable();
             $table->boolean('enabled')->default(true);
