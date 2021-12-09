@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cgy;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/cancheck',function(){
+    //先確認是否有登入
+    if(Auth::check()){
+        $user = Auth::user();
+        $cgy = Cgy::first();
+        //確認是否具有該權限
+        if($user->can('browse',$cgy)){
+            return '可以存取';
+        }else{
+            return '權限不足';
+        }
+    }else{
+        return '尚未登入';
+    }
+});
 
 
 Route::group(['prefix' => 'admin'], function () {
